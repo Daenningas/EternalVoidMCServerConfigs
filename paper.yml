@@ -37,9 +37,9 @@ settings:
   async-chunks:
     threads: -1
   unsupported-settings:
-    allow-permanent-block-break-exploits: false
-    allow-piston-duplication: false
-    allow-headless-pistons: false
+    allow-permanent-block-break-exploits: true
+    allow-piston-duplication: true
+    allow-headless-pistons: true
     allow-permanent-block-break-exploits-readme: This setting controls if players
       should be able to break bedrock, end portals and other intended to be permanent
       blocks.
@@ -203,7 +203,7 @@ world-settings:
       disable-sprint-interruption-on-attack: false
       shield-blocking-delay: 5
       disable-end-credits: false
-      disable-unloaded-chunk-enderpearl-exploit: true
+      disable-unloaded-chunk-enderpearl-exploit: false
       disable-relative-projectile-velocity: false
       disable-mob-spawner-spawn-egg-transformation: false
       pillager-patrols:
