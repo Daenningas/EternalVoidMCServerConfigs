@@ -28,14 +28,18 @@ Exploits:
     NetherWhiteList:
     - Donkey
     - Ghast
+    - item
+    - minecart
     EndWhiteList:
     - elder_guardian
     - guardian
+    - falling_block
+    - item
     BlockNonPlayersInEndPortal: false
-    NetherWhiteListMode: true
+    NetherWhiteListMode: false
     BlockNonPlayersInNetherPortal: false
     NotifyBlockedPortalAttempts: false
-    EndWhiteListMode: true
+    EndWhiteListMode: false
   OverStack:
     RemoveItemsOfType:
     - Cod_Spawn_Egg
