@@ -83,7 +83,7 @@ settings:
       fix-spigot-5988: false
   enchantment:
     allow-infinity-and-mending-together: true
-    allow-infinity-on-crossbow: 
+    allow-infinity-on-crossbow: true
     allow-unsafe-enchants: false
   entity:
     enderman:
@@ -138,8 +138,8 @@ world-settings:
       raid-cooldown-seconds: 0
       animal-breeding-cooldown-seconds: 0
       mobs-ignore-rails: false
-      rain-stops-after-sleep: true
-      thunder-stops-after-sleep: true
+      rain-stops-after-sleep: false
+      thunder-stops-after-sleep: false
       armorstand:
         step-height: 0.0
         set-name-visible-when-placing-with-custom-name: false
@@ -164,7 +164,7 @@ world-settings:
           firework: 0
           trident: 0
       infinity-bow:
-        works-without-arrows: false
+        works-without-arrows: true
         normal-arrows: true
         spectral-arrows: false
         tipped-arrows: false
@@ -242,7 +242,7 @@ world-settings:
           mobs-target: true
         exp-dropped-on-death:
           equation: expTotal / 2 #expLevel * 7
-          maximum: 100
+          maximum: 10000
         armor-click-equip:
           allow-hot-swapping: false
           creative-makes-copy: true
@@ -705,7 +705,7 @@ world-settings:
       shulker:
         ridable: false
         ridable-in-water: false
-        change-color-with-dye: false
+        change-color-with-dye: true
         attributes:
           max_health: 30.0
         spawn-from-bullet:
