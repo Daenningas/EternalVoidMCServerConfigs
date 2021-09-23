@@ -1,0 +1,29 @@
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                            ------------------------                              #
+#                            SpeedLimit Configuration                              #
+#                                 By Loving11ish                                   #
+#                            ------------------------                              #
+#                            --[mc.crapticraft.com]--                              #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#----------------------------------------------------------------------------------#
+#For a player or group to bypass this limit, give them 'SpeedLimit.bypass.walking'.
+#This enables the SpeedLimit for the player's walking speed.
+Enable-walking-limit: false
+#This sets the maximum speed that the player can walk at. (0.00 to 1.00)
+Walking-speed-limit: 0.10
+#----------------------------------------------------------------------------------#
+#For a player or group to bypass this limit, give them 'SpeedLimit.bypass.flying'.
+#This enables the SpeedLimit for the player's flying speed.
+Enable-flying-limit: true
+#This sets the maximum speed that the player can fly at. (0.00 to 1.00)
+Flying-speed-limit: 0.02
+#----------------------------------------------------------------------------------#
+#Do you wish to disable the SpeedLimits in certain worlds?
+#Enter the world names in the list below (they are case sensitive)
+#Remove the '[]' and the '#' in front of the '-' listed below.
+Disabled-Worlds: []
+#  - 'world_nether'
+#  - 'world_the_end'
+#----------------------------------------------------------------------------------#

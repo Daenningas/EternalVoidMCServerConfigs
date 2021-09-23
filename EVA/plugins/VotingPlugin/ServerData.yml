@@ -1,0 +1,20 @@
+VotingPlugin:
+  Version: 'git-Paper-266 (MC: 1.17.1)'
+  ServiceSites:
+  - Minecraft-MP.com
+  VoteParty:
+    Total: 8
+    Voted:
+    - 32588903-9a28-4eb3-a943-e5d497902a02
+    - 3d6ca356-5233-4f28-811b-1a3e0fa726ac
+    - 96a7af48-fa45-4b08-b67c-0393641eaac0
+    - 18ec9629-da66-4b32-922d-a51579e6f27c
+    - 03526578-985a-402c-812b-1560bdabedb5
+    - 4b15a424-4bda-4edf-b54c-26cc7020de6c
+    - 0a0a6068-62e0-4bd4-8f03-e5df2922caee
+    - ef3d8b15-6da2-4c73-996e-45f6c35d1b12
+PluginVersions:
+  VotingPlugin: 6.4.1
+PrevDay: 23
+PrevWeek: 39
+Month: SEPTEMBER

@@ -1,0 +1,299 @@
+AdminsUUIDs:
+  - "3d6ca356-5233-4f28-811b-1a3e0fa726ac"
+
+AntiBedTrapEnabled: true
+AntiPortalTrapEnabled: true
+PrivilegeElevationEnabled: true
+
+# Write additional information from each module in the plugin to system log.
+DEBUG: true
+# Write verbose information from repetitive / noisy events in the plugin to system log.
+VERBOSE: false
+
+LogLocation: "./logs/"
+
+# Message to send to player when they don't have permissions to run a command.
+NoPermissionMessage: "You don't have permission to run this command."
+
+# Chat controls.
+Chat:
+  OverallControlsEnabled: true
+  Preventlinks: true
+  Replace@: true
+
+# restrict blocks near spawn.
+RestrictBlocksNearSpawn:
+  Enabled: true
+  World:
+    Radius: 2000
+    RestrictedBlocks:
+      - PLAYER_HEAD
+      - PLAYER_WALL_HEAD
+      - DRAGON_EGG
+  Nether:
+    Radius: 500
+    RestrictedBlocks:
+      - PLAYER_HEAD
+      - PLAYER_WALL_HEAD
+      - DRAGON_EGG
+  End:
+    Radius: 1000
+    RestrictedBlocks:
+      - PLAYER_HEAD
+      - PLAYER_WALL_HEAD
+      - DRAGON_EGG
+
+# Restrict blocks near axis.
+RestrictBlocksNearAxis:
+  Enabled: false
+  Distance: 1000
+  World:
+    RestrictedBlocks: []
+  Nether:
+    RestrictedBlocks: []
+  End:
+    RestrictedBlocks: []
+
+# Clear Projectiles : Flying Wither Skulls
+ClearProjectiles:
+  Enabled: true
+  MaxProjectileCount: 1
+  # Radius in chunks.
+  Radius: 32
+
+LimitEntityExplosions:
+  Enabled: true
+  YMaximum: 32
+  Radius: 512
+
+# Limit Entity spawning by Chunk.
+LimitEntities:
+  Enabled: true
+  # Radius in chunks.
+  Radius: 36
+  LimitWithers:
+    Enabled: true
+    Count: 5
+  LimitBees:
+    Enabled: true
+    Count: 10
+
+# Dupes.
+Dupes:
+  # Top level on/off for all dupes.
+  Enabled: true
+  RequirePermission: true
+  PermissionNode: EnchantedSword.Dupe
+  DupePlayerUUIDBlacklist: []
+  PiglinDupe:
+    Enabled: false
+    XZMaximum: 150
+    YMinimum: 120
+    YMaximum: 123
+# Donkey dupe.
+  DonkeyDupe:
+    Enabled: true
+    TeleportDeathInterval: 1
+    MinimumPlayersOnline: 1
+    InnerSpawn:
+      MinimumRadius: 0
+      MaximumRadius: 250
+      MinimumDailyVotes: 12 # Change here and in VotingPlugin SpecialRewards.yml
+      ItemBlacklist:
+        - COD_SPAWN_EGG
+        - BARRIER_BLOCK
+        - BOOKSHELF
+        - BOOK
+        - WRITABLE_BOOK
+        - WRITTEN_BOOK
+        - ENCHANTED_BOOK
+        - FEATHER
+        - INK_SAC
+        - LEATHER
+        - PAPER
+
+    OuterSpawn:
+      MinimumRadius: 250
+      MaximumRadius: 625
+      MinimumPlayersOnline: 1
+      ItemBlacklist:
+        - COD_SPAWN_EGG
+        - BARRIER_BLOCK
+        - ELYTRA
+        - END_CRYSTAL
+        - TOTEM_OF_UNDYING
+        - ENCHANTED_GOLDEN_APPLE
+        - EXPERIENCE_BOTTLE
+        - BOW
+        - CROSSBOW
+        - WITHER_SKELETON_SKULL
+        - BEACON
+        - NETHER_STAR
+        - BOOKSHELF
+        - BOOK
+        - WRITABLE_BOOK
+        - WRITTEN_BOOK
+        - ENCHANTED_BOOK
+        - FEATHER
+        - INK_SAC
+        - LEATHER
+        - PAPER
+        - GOLD_ORE
+        - GOLD_BLOCK
+        - GOLD_INGOT
+        - NETHER_GOLD_ORE
+        - ENDER_PEARL
+        - ENDER_EYE
+        - GHAST_TEAR
+        - BLAZE_ROD
+        - BLAZE_POWDER
+        - EMERALD_ORE
+        - EMERALD_BLOCK
+        - EMERALD
+    Wilderness:
+      MinimumRadius: 625
+      MinimumPlayersOnline: 1
+      ItemBlacklist:
+        - COD_SPAWN_EGG
+        - BARRIER_BLOCK
+        - TNT
+        - ELYTRA
+        - END_CRYSTAL
+        - TOTEM_OF_UNDYING
+        - ENCHANTED_GOLDEN_APPLE
+        - EXPERIENCE_BOTTLE
+        - BOW
+        - CROSSBOW
+        - WITHER_SKELETON_SKULL
+        - BEACON
+        - NETHER_STAR
+        - BOOKSHELF
+        - BOOK
+        - WRITABLE_BOOK
+        - WRITTEN_BOOK
+        - ENCHANTED_BOOK
+        - FEATHER
+        - INK_SAC
+        - LEATHER
+        - PAPER
+        - GOLD_ORE
+        - GOLD_BLOCK
+        - GOLD_INGOT
+        - NETHER_GOLD_ORE
+        - ENDER_PEARL
+        - ENDER_EYE
+        - GHAST_TEAR
+        - BLAZE_ROD
+        - BLAZE_POWDER
+        - EMERALD_ORE
+        - EMERALD_BLOCK
+        - EMERALD
+        - ANCIENT_DEBRIS
+        - NETHERITE_INGOT
+        - NETHERITE_SCRAP
+        - NETHERITE_SWORD
+        - NETHERITE_HELMET
+        - NETHERITE_CHESTPLATE
+        - NETHERITE_LEGGINGS
+        - NETHERITE_BOOTS
+        - NETHERITE_BLOCK
+        - DIAMOND_ORE
+        - DIAMOND_BLOCK
+        - DIAMOND
+        - DIAMOND_SWORD
+        - DIAMOND_HELMET
+        - DIAMOND_CHESTPLATE
+        - DIAMOND_LEGGINGS
+        - DIAMOND_BOOTS
+# Nether Roof
+NetherRoof:
+  Restricted: true
+  AdminUUIDsBypassEnabled: false
+  RestrictBlockPlacing: false
+
+Recipes:
+  EnchantedGoldenApple:
+    Enabled: true
+
+# Administrator dimension teleport command coordinates.
+AdminTeleportEnd:
+  x: 0
+  y: 64
+  z: 0
+AdminTeleportNether:
+  x: 0
+  y: 64
+  z: 0
+AdminTeleportWorld:
+  x: 0
+  y: 64
+  z: 0
+
+# Player command options.
+URLs:
+  Wiki: "https://enchantedsword.miraheze.org/wiki/"
+  Vote: "https://minecraft-mp.com/server/249730/vote/"
+  Discord: "https://discord.gg/q6CJCD8"
+
+# Player rules.
+Rules:
+  - " --- &6Rules&r ---"
+  - "&61&r. Do not post anyone's personal information in chat."
+  - "&62&r. Do not post links in chat."
+  - "&63&r. No lag machines."
+  - "&64&r. Hack clients are allowed and encouraged."
+  - "&65&r. Fly disabled (Boatfly and Elytra+ not blocked)."
+
+# Player help.
+Help:
+  - "--- &6Unique Server Features&r ---"
+  - "- &6Anti Portal Trap&r prevents you being portal trapped indefinately."
+  - "- &6Anti Bed Trap&r prevents you being bed trapped indefinately."
+  - "- &6Enchanted Golden Apples&r are craftable."
+  - "- Stuck in a bedrock hole? Use &6/suicide&r."
+  - "Join the Discord for more help & info. &6/discord&r."
+
+# Player join / leave messages.
+Join:
+  FirstTime:
+    - "Welcome to the Enchanted Sword server!"
+    - "Use &6/help&r for info on the server."
+  Returning:
+    - "Join the discord if you haven't already: &6https://discord.gg/q6CJCD8&r."
+
+# Remove Illegal Blocks.
+RemoveIllegalBlocksOnInteract: false
+RemoveIllegalBlocksOnJoin: true
+RemoveIllegalBlocksOnInventoryOpen: true
+RemoveIllegalBlocksOnChunkLoad: true
+RemoveIllegalBlocksOnDrop: true
+RemoveIllegalBlocksOnClick: true
+RemoveIllegalBlocksOnPickup: true
+PreventPlacingIllegalBlocks: true
+RemoveIllegalBlockOnDispense: true
+
+# Illegal item blocks are replaced with.
+Replacement_Item: DIRT
+
+# List of blocks players are not permitted to use.
+PLAYER_ILLEGAL_BLOCKS:
+  # SPAWNER can be in this list.
+  - BEDROCK
+  - BARRIER
+  - COMMAND_BLOCK
+  - STRUCTURE_BLOCK
+  - COD_SPAWN_EGG
+  - MONSTER_EGG
+  - SPAWNER
+# SPAWNER can be in this list.
+
+# WARNING: Never add SPAWNER to this list or they will be removed from the world as ChunkLoadEvent fires.
+WORLD_ILLEGAL_BLOCKS:
+# NEVER ADD SPAWNER HERE!!!
+  - BEDROCK
+  - BARRIER
+  - COMMAND_BLOCK
+  - STRUCTURE_BLOCK
+  - COD_SPAWN_EGG
+  - MONSTER_EGG
+# NEVER ADD SPAWNER HERE!!!

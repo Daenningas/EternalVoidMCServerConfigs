@@ -1,0 +1,7 @@
+message:
+- §e-----------------------------------------------------
+- '§3%totalPlayers% player(s) have spawned at least once in the world. '
+- The World is %years% years, %months% months and %days% days old and has a file size
+  of %fileSize% GB
+- §e-----------------------------------------------------
+filesizeupdate_in_ticks: 600000
