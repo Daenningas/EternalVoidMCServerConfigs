@@ -1,0 +1,7 @@
+Bans:
+  f4c2e0d5-6176-452d-aff8-a78acfe0bbe6:
+    punisher: Unknown
+    reason: Test
+Wave:
+  7835ccf2-2b06-4cec-b2a3-3a3e23fe2a35:
+    command: ban {player} wave punishment example

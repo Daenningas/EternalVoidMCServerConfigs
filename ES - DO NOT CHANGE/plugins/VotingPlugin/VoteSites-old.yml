@@ -1,0 +1,78 @@
+# 
+# Reward for any site
+# Similar to AnySiteReward
+# This requires the site to be configured in order to get the reward.
+VoteSites:
+  topg_org:
+    Enabled: true
+    Name: Topg
+    ServiceSite: topg.org
+    VoteURL: https://topg.org/Minecraft/in-600266
+    VoteDelay: 24
+    WaitUntilVoteDelay: false
+    VoteDelayDaily: false
+    ForceOffline: false
+    Item:
+      Material: DIAMOND
+      Amount: 1
+    Rewards: AdvancedPriority
+  minecraftservers_org:
+    Enabled: true
+    Name: MinecraftServers_org
+    ServiceSite: minecraftservers.org
+    VoteURL: https://minecraftservers.org/vote/577018
+    VoteDelay: 24
+    Item:
+      Material: DIAMOND
+      Amount: 1
+    Rewards: AdvancedPriority
+  minecraftmp_com:
+    Enabled: true
+    Name: Minecraft-mp
+    ServiceSite: minecraft-mp.com
+    VoteURL: https://minecraft-mp.com/server/249730/vote/
+    VoteDelay: 24
+    Item:
+      Material: DIAMOND
+      Amount: 1
+    Rewards: AdvancedPriority
+  MCSL:
+    Enabled: true
+    Name: MCSL
+    ServiceSite: minecraft-server-list.com
+    VoteURL: https://minecraft-server-list.com/server/455078/vote/
+    VoteDelay: 24
+    Item:
+      Material: DIAMOND
+      Amount: 1
+    Rewards: AdvancedPriority
+  minecraftservers_biz:
+    Enabled: true
+    Name: MinecraftServers_biz
+    ServiceSite: minecraftservers.biz
+    VoteURL: https://minecraftservers.biz/servers/147476/
+    VoteDelay: 24
+    Item:
+      Material: DIAMOND
+      Amount: 1
+    Rewards: AdvancedPriority
+  PlanetMinecraft_com:
+    Enabled: true
+    ServiceSite: PlanetMinecraft.com
+    VoteURL: https://www.planetminecraft.com/server/enchanted-sword/vote/
+    VoteDelay: 24
+    Item:
+      Material: GRASS
+      Amount: 1
+    Rewards: AdvancedPriority
+  MinecraftServersList:
+    Enabled: true
+    Name: Minebrowse
+    ServiceSite: MinecraftServersList
+    VoteURL: https://minebrowse.com/server/1127
+    VoteDelay: 24
+    Item:
+      Material: DIAMOND
+      Amount: 1
+    Rewards: AdvancedPriority
+EverySiteReward: []

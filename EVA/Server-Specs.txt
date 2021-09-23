@@ -1,0 +1,5 @@
+8 x Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz (1 Socket)
+
+4x CPU cores
+16GB RAM
+SSD

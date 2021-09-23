@@ -1,0 +1,233 @@
+# StackMob 5.4.2 Configuration file - by antiPerson and contributors.
+stack:
+  max-size: 30
+  interval: 100
+  merge-range:
+  - 10
+  - 10
+  - 10
+  threshold:
+    enabled: true
+    amount: 15
+worlds-blacklist: []
+worlds-blacklist-invert: false
+types-blacklist:
+- ELDER_GUARDIAN
+- WITHER_SKELETON
+- STRAY
+- HUSK
+- ZOMBIE_VILLAGER
+- SKELETON_HORSE
+- ZOMBIE_HORSE
+- DONKEY
+- MULE
+- EVOKER
+- VEX
+- VINDICATOR
+- ILLUSIONER
+- CREEPER
+- SKELETON
+- SPIDER
+- GIANT
+- ZOMBIE
+- SLIME
+- GHAST
+- ENDERMAN
+- CAVE_SPIDER
+- SILVERFISH
+- BLAZE
+- MAGMA_CUBE
+- ENDER_DRAGON
+- BAT
+- WITCH
+- ENDERMITE
+- GUARDIAN
+- SHULKER
+- PIG
+- SHEEP
+- COW
+- SQUID
+- WOLF
+- MUSHROOM_COW
+- SNOWMAN
+- OCELOT
+- IRON_GOLEM
+- HORSE
+- RABBIT
+- POLAR_BEAR
+- LLAMA
+- PARROT
+- VILLAGER
+- TURTLE
+- PHANTOM
+- COD
+- SALMON
+- PUFFERFISH
+- TROPICAL_FISH
+- DROWNED
+- DOLPHIN
+- CAT
+- PANDA
+- PILLAGER
+- RAVAGER
+- TRADER_LLAMA
+- WANDERING_TRADER
+- FOX
+- BEE
+- HOGLIN
+- PIGLIN
+- STRIDER
+- ZOGLIN
+- PIGLIN_BRUTE
+- WITHER
+types-blacklist-invert: false
+reason-blacklist:
+- NATURAL
+reason-blacklist-invert: false
+display-name:
+  format: '&a%type% &d(%size%)'
+  visibility: NEARBY
+  nearby:
+    range:
+    - 12
+    - 6
+    - 12
+    interval: 20
+  threshold: 1
+traits:
+  sheep-color: true
+  sheep-sheared: true
+  slime-size: true
+  horse-color: true
+  llama-color: true
+  parrot-variant: true
+  drowned-hand-item: true
+  age: true
+  breed-mode: true
+  love-mode: true
+  cat-type: true
+  mooshroom-variant: true
+  fox-type: true
+  bee-nectar: true
+  bee-stung: true
+  zoglin-baby: true
+  piglin-baby: true
+  leashed: true
+disable-targeting:
+  enabled: false
+  type-blacklist: []
+  type-blacklist-invert: false
+  reason-blacklist: []
+  reason-blacklist-invert: false
+events:
+  breed:
+    enabled: true
+    mode: MULTIPLY
+    limit: -1
+  dye:
+    enabled: true
+    mode: MULTIPLY
+    limit: -1
+  shear:
+    enabled: true
+    mode: MULTIPLY
+    limit: -1
+  multiply:
+    drops: true
+    explosion: true
+    slime-split: true
+  divide:
+    nametag: true
+    tame: true
+    enter-block: true
+  remove-stack-data:
+    nametag: true
+  equip:
+    enabled: true
+    mode: IGNORE
+death:
+  SINGLE:
+    priority: 4
+    reason-blacklist: []
+    reason-blacklist-invert: false
+    type-blacklist:
+    - CHICKEN
+    - ZOMBIFIED_PIGLIN
+    - WITHER_SKULL
+    type-blacklist-invert: false
+    spawn-reason-blacklist: []
+    spawn-reason-blacklist-invert: false
+  ALL:
+    priority: 3
+    reason-blacklist: []
+    reason-blacklist-invert: false
+    type-blacklist: []
+    type-blacklist-invert: false
+    spawn-reason-blacklist: []
+    spawn-reason-blacklist-invert: false
+  STEP:
+    priority: 2
+    reason-blacklist: []
+    reason-blacklist-invert: false
+    type-blacklist:
+    - CHICKEN
+    - ZOMBIFIED_PIGLIN
+    - WITHER_SKULL
+    type-blacklist-invert: false
+    max-step: 10
+    min-step: 4
+    spawn-reason-blacklist: []
+    spawn-reason-blacklist-invert: false
+  STEP_DAMAGE:
+    priority: 1
+    reason-blacklist: []
+    reason-blacklist-invert: false
+    type-blacklist:
+    - CHICKEN
+    - ZOMBIFIED_PIGLIN
+    - WITHER_SKULL
+    type-blacklist-invert: false
+    spawn-reason-blacklist: []
+    spawn-reason-blacklist-invert: false
+  skip-animation: false
+drops:
+  enabled: true
+  use-loot-tables: true
+  one-per-stack: []
+  one-per-stack-invert: false
+  item-blacklist: []
+  item-blacklist-invert: false
+  reason-blacklist: []
+  reason-blacklist-invert: false
+  type-blacklist: []
+  type-blacklist-invert: false
+experience:
+  enabled: true
+  multiplier-min: 1.0
+  multiplier-max: 1.0
+  type-blacklist: []
+  type-blacklist-invert: false
+player-stats: true
+wait-to-stack:
+  enabled: true
+  wait-time: 5
+  types-whitelist:
+  - ZOMBIE
+  - SKELETON
+  - ZOMBIFIED_PIGLIN
+  - CREEPER
+  - ENDERMAN
+  types-whitelist-invert: false
+  reasons-whitelist:
+  - SPAWNER
+  reasons-whitelist-invert: false
+hooks:
+  worldguard: true
+  mythicmobs:
+    enabled: false
+    blacklist: []
+    blacklist-invert: false
+  citizens: false
+  mcmmo: false
+  jobs: false
+  protocollib: true

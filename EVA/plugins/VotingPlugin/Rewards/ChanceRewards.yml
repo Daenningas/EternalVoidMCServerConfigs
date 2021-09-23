@@ -1,0 +1,67 @@
+OnlyOneLucky: false
+# The example below would give a 1 in 10 chance of receiving an extra $100, and a 1 in 50 chance of an extra $1000.
+Lucky:
+  '4':
+    Messages:
+      Player: 'Sorry, you were unlucky this time. Vote again for a chance of rewards.'
+  '4':
+    Commands:
+      Console:
+      - 'give %player% diamond'
+      - 'give %player% cookie'
+    Messages:
+      Player: 'You received a diamond and a cookie for voting!'
+  '4':
+    Commands:
+      Console:
+      - 'give %player% emerald'
+      - 'give %player% cookie'
+    Messages:
+      Player: 'You received an emerald and a cookie for voting!'
+  '4':
+    Commands:
+      Console:
+      - 'give %player% obsidian 4'
+      - 'give %player% cookie'
+    Messages:
+      Player: 'You received obsidian and a cookie for voting!'
+  '20':
+    Commands:
+      Console:
+      - 'give %player% ghast_tear'
+      - 'give %player% cookie'
+    Messages:
+      Player: 'You received a ghast tear and a cookie for voting!'
+  '100':
+    Commands:
+      Console:
+      - 'give %player% wither_skill'
+    Messages:
+      Player: 'You were very lucky and received a wither skull for voting!'
+  '200':
+    Commands:
+      Console:
+      - 'give %player% totem_of_undying'
+    Messages:
+      Player: 'You were very lucky and received a Totem of Undying for voting!'
+  '200':
+    Commands:
+      Console:
+      - 'give %player% shulker_shell'
+    Messages:
+      Player: 'You were very lucky and received a shulker shell for voting!'
+
+# Sound on reward
+Sound:
+  # Enable or Disable Sound
+  Enabled: true
+  # Sound to play
+  # 1.9 Sounds: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  # 1.8: https://jd.bukkit.org/org/bukkit/Sound.html 
+  Sound: 'BLOCK_ANVIL_USE'
+  # Volume
+  # Range: 0.0 to 1.0
+  Volume: 1.0
+  # Pitch
+  # Range: 0.0 to 2.0
+  Pitch: 1.0

@@ -1,0 +1,4 @@
+# Directly defined reward file. ANY EDITS HERE CAN GET OVERRIDDEN!
+Messages:
+  Player: '&aYou came in first place in %TopVoter%!'
+DirectlyDefinedReward: true
