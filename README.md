@@ -24,3 +24,6 @@ https://www.spigotmc.org/threads/guide-optimizing-spigot-remove-lag-fix-tps-impr
 
 https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/
 
+### Additional Minecraft Server Optimization Info
+
+https://github.com/YouHaveTrouble/minecraft-optimization
