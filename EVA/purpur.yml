@@ -821,7 +821,7 @@ world-settings:
       villager:
         ridable: false
         ridable-in-water: false
-        brain-ticks: 2
+        brain-ticks: 1
         use-brain-ticks-only-when-lagging: true
         follow-emerald-blocks: false
         can-be-leashed: false
