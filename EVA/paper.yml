@@ -120,7 +120,7 @@ world-settings:
     disable-teleportation-suffocation-check: false
     use-vanilla-world-scoreboard-name-coloring: false
     baby-zombie-movement-modifier: 0.5
-    max-auto-save-chunks-per-tick: 6
+    max-auto-save-chunks-per-tick: 8
     piglins-guard-chests: true
     should-remove-dragon: false
     ender-dragons-death-always-places-dragon-egg: false
@@ -140,7 +140,7 @@ world-settings:
     duplicate-uuid-saferegen-delete-range: 32
     phantoms-do-not-spawn-on-creative-players: true
     phantoms-only-attack-insomniacs: true
-    update-pathfinding-on-block-update: true
+    update-pathfinding-on-block-update: false
     fix-wither-targeting-bug: false
     map-item-frame-cursor-update-interval: 10
     allow-player-cramming-damage: false
@@ -166,7 +166,7 @@ world-settings:
     container-update-tick-rate: 3
     armor-stands-do-collision-entity-lookups: true
     disable-explosion-knockback: false
-    fix-climbing-bypassing-cramming-rule: false
+    fix-climbing-bypassing-cramming-rule: true
     prevent-tnt-from-moving-in-water: false
     iron-golems-can-spawn-in-air: false
     show-sign-click-command-failure-msgs-to-player: false
@@ -174,7 +174,7 @@ world-settings:
     delay-chunk-unloads-by: 10s
     armor-stands-tick: true
     non-player-arrow-despawn-rate: 60
-    creative-arrow-despawn-rate: 60
+    creative-arrow-despawn-rate: 20
     spawner-nerfed-mobs-should-jump: false
     entities-target-with-follow-range: false
     zombies-target-turtle-eggs: true
@@ -185,17 +185,29 @@ world-settings:
     per-player-mob-spawns: true
     light-queue-size: 20
     auto-save-interval: -1
-    enable-treasure-maps: true
+    enable-treasure-maps: false
     treasure-maps-return-already-discovered: false
     generator-settings:
       flat-bedrock: false
     entity-per-chunk-save-limit:
-      experience_orb: -1
-      snowball: -1
-      ender_pearl: -1
-      arrow: -1
-      fireball: -1
-      small_fireball: -1
+      experience_orb: 16
+      arrow: 16
+      dragon_fireball: 3
+      egg: 8
+      ender_pearl: 8
+      eye_of_ender: 8
+      fireball: 8
+      small_fireball: 8
+      firework_rocket: 8
+      potion: 8
+      llama_spit: 3
+      shulker_bullet: 8
+      snowball: 8
+      spectral_arrow: 16
+      experience_bottle: 3
+      trident: 16
+      wither_skull: 4
+      area_effect_cloud: 8
     game-mechanics:
       scan-for-legacy-ender-dragon: true
       fix-curing-zombie-villager-discount-exploit: true
@@ -239,8 +251,8 @@ world-settings:
       MinimumTicks: 100
       MaximumTicks: 600
     despawn-ranges:
-      soft: 29
-      hard: 96
+      soft: 30
+      hard: 72
     frosted-ice:
       enabled: true
       delay:
@@ -276,15 +288,40 @@ world-settings:
       items:
         COBBLESTONE: 300
         NETHERRACK: 300
+        SAND: 300
+        RED_SAND: 300
         DIRT: 300
+        GRASS: 300
+        PUMPKIN: 300
+        MELON_SLICE: 300
+        KELP: 300
+        BAMBOO: 300
+        SUGAR_CANE: 300
+        TWISTING_VINES: 300
+        WEEPING_VINES: 300
+        OAK_LEAVES: 300
+        SPRUCE_LEAVES: 300
+        BIRCH_LEAVES: 300
+        JUNGLE_LEAVES: 300
+        ACACIA_LEAVES: 300
+        DARK_OAK_LEAVES: 300
+        CACTUS: 300
+        DIORITE: 300
+        GRANITE: 300
+        ANDESITE: 300
+        SCAFFOLDING: 600
         GRAVEL: 300
     tick-rates:
       sensor:
         villager:
-          secondarypoisensor: 40
+          secondarypoisensor: 80
+          nearestbedsensor: 80
+          villagerbabiessensor: 40
+          playersensor: 40
       behavior:
         villager:
-          validatenearbypoi: -1
+          validatenearbypoi: 60
+          acquirepoi: 120
     feature-seeds:
       generate-random-seeds-for-all: false
     anti-xray:
@@ -321,7 +358,7 @@ world-settings:
       - oak_planks
       - deepslate
     viewdistances:
-      no-tick-view-distance: 10
+      no-tick-view-distance: 7
     unsupported-settings:
       fix-invulnerable-end-crystal-exploit: true
     squid-spawn-height:
