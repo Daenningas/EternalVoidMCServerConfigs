@@ -11,9 +11,9 @@
 verbose: false
 config-version: 22
 settings:
-  use-alternate-keepalive: false
-  dont-send-useless-entity-packets: false
-  lagging-threshold: 19.0
+  use-alternate-keepalive: true
+  dont-send-useless-entity-packets: true
+  lagging-threshold: 15.0
   allow-water-placement-in-the-end: true
   tps-catchup: true
   server-mod-name: Purpur
@@ -81,6 +81,8 @@ settings:
       range: 128
     bed:
       fix-spigot-5988: false
+    grindstone:
+      ignore-curses: true
   enchantment:
     allow-infinity-and-mending-together: true
     allow-infinity-on-crossbow: true
@@ -286,6 +288,9 @@ world-settings:
       boat:
         eject-players-on-land: false
         do-fall-damage: true
+      halloween:
+        force: false
+        head-chance: 0.25
     mobs:
       enderman:
         ridable: false
@@ -388,6 +393,7 @@ world-settings:
         attributes:
           max_health: 20.0
       cat:
+        default-collar-color: RED
         ridable: false
         ridable-in-water: false
         spawn-delay: 1200
@@ -435,7 +441,7 @@ world-settings:
           max_health: 20.0
       dolphin:
         ridable: false
-        disable-treasure-searching: false
+        disable-treasure-searching: true
         naturally-aggressive-to-players-chance: 0.0
         spit:
           cooldown: 20
@@ -815,7 +821,7 @@ world-settings:
       villager:
         ridable: false
         ridable-in-water: false
-        brain-ticks: 1
+        brain-ticks: 2
         use-brain-ticks-only-when-lagging: true
         follow-emerald-blocks: false
         can-be-leashed: false
@@ -867,7 +873,7 @@ world-settings:
       zombie:
         ridable: false
         ridable-in-water: false
-        aggressive-towards-villager-when-lagging: true
+        aggressive-towards-villager-when-lagging: false
         break-door-minimum-difficulty: HARD
         bypass-mob-griefing: false
         attributes:
@@ -1052,6 +1058,9 @@ world-settings:
           FULL: 100
           PARTIAL: 10
           UNSTABLE: 10
+      water:
+        infinite-source: true
+        infinite-required-sources: 2
     tools:
       axe:
         strippables:
