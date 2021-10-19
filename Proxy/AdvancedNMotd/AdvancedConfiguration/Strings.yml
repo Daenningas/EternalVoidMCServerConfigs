@@ -1,0 +1,119 @@
+#######################                       #######################
+#      _____                                                        #
+#     /    /  /\     /                              _   _   _       #
+#    /___ /  /  \   / |\_/|  _  ___ |\       \   / |_|  _| | |      #
+#   /    /  /    \ /  |   | | |  |  | |  -->  \_/.  _|.|_. |_|      #
+#  /    /  /      /   |   | |_|  |  |/                              #
+#                                                                   #
+####################         Strings.yml         ####################
+
+#
+#All strings in this file support placeholders!
+#
+
+#
+#Online Placeholders:
+#
+
+#
+#Placeholder: %online%
+#Description: display real server's online
+#
+
+#
+#Placeholder: %fakeOnline%
+#Description: display fake server's online
+#
+#This placeholder only works if you
+#allow usage of Data.yml file in
+#config.yml, by setting Data: true
+#
+
+#
+#MaxPlayers Placeholders:
+#
+
+#
+#Placeholder: %maxplayers%
+#Description: display number of real server's slots
+#
+
+#
+#Placeholder: %fakeMaxplayers%
+#Description: display number of fake server's
+#
+#This placeholder only works if you
+#allow usage of Data.yml file in
+#config.yml, by setting Data: true
+#
+
+#
+#Hex Colors Placeholders:
+#
+
+#
+#Placeholder: %#<color>%
+#Description: make a message of any color
+#Example: %#C8A2C8% or %#1CA9C9%
+#
+
+#
+#Placeholder: %#<from-color>->#<to-color>:<text>;<arg-1>;<arg-2>;...<arg-6>%
+#(place formatting codes after ; (these are &k,&l,&m,&n,&o,&r)
+#If you don't want to use formatting codes, don't place them)
+#Description: make a gradient message
+#Example: %#C8A2C8->#1CA9C9:Gradient!;&l%
+#
+#IMPORTANT!
+#Please note that the order of the formatting codes
+#is not strict, but the result directly depends on it.
+#To ensure that the outcome text meets your expectations,
+#arrange the codes in the correct order for you.
+#
+    
+Motd:
+    
+    #What should be displayed on line 1 of your Motd:
+    #(if you have more than 1 line, random will be selected
+    #but it will be on the same position as a line in LineTwo section)
+    LineOne:
+        - "&c&lEternal Void Anarchy &7&l|&r &c&l1.12-1.17.x &7&l"
+        - "&c&lEternal Void Anarchy &7&l|&r &c&l1.12-1.17.x &7&l"
+        - "&c&lEternal Void Anarchy &7&l|&r &c&l1.12-1.17.x &7&l"
+        - "&c&lEternal Void Anarchy &7&l|&r &c&l1.12-1.17.x &7&l"
+        - "&c&lEternal Void Anarchy &7&l|&r &c&l1.12-1.17.x &7&l"
+        - "&c&lEternal Void Anarchy &7&l|&r &c&l1.12-1.17.x &7&l"
+        - "&c&lEternal Void Anarchy &7&l|&r &c&l1.12-1.17.x &7&l"
+        - "&c&lEternal Void Anarchy &7&l|&r &c&l1.12-1.17.x &7&l"
+    
+    #What should be displayed on line 2 of your Motd:
+    #(if you have more than 1 line, random will be selected
+    #but it will be on the same position as a line in LineOne section)
+    LineTwo:
+        - "&7&l>&r&f&l %#FFFF00->#FF00FF:welcome to hell;&l%&r"
+        - "&7&l>&r&f&l %#FF0000->#008000:Can someone plz give me wood!;&l%&r"
+        - "&7&l>&r&f&1 %#FFFF00->#FF00FF:Help! I need Help!;&l%&r"
+        - "&7&l>&r&f&1 %#FF0000->#008000:This place is scary.;&l%&r"
+        - "&7&l>&r&f&1 %#FF0000->#008000:Exploits are temporarily disabled;&l%&r"
+        - "&7&l>&r&f&1 %#FFFF00->#FF00FF:Free diamonds for youtubers;&l%&r"
+        - "&7&l>&r&f&1 %#FF0000->#008000:Want to build a base together?;&l%&r"
+        - "&7&l>&r&f&1 %#FF0000->#008000:Does anybody have food?;&l%&r"
+    
+HoverBox:
+
+    #What text should be displayed when you hover over a player amount text:
+    HoverText:
+        - "&c&lPlayer &r&f&lInfo"
+        - "&7&m----------"
+        - ""
+        - "&b&lOnline: &r&f&l%fakeOnline%"
+        - "&b&lMaxPlayers: &r&f&l%fakeMaxplayers%"
+        - ""
+        - "&7&m----------"
+        
+Version:
+    
+    #What text should be displayed instead of player amount text:
+    #VersionText: "&eConnect &a>&b>&c>                                                   &a&lJOIN! &r&6&l[&r&c&l%fakeOnline%&r&7/&c&l%fakeMaxplayers%&r&6&l]"
+    VersionText: "                                                                      &a&lJOIN! &r&6&l[&r&c&l%fakeOnline%&r&7/&c&l%fakeMaxplayers%&r&6&l]"
+    
