@@ -1,9 +1,0 @@
-# Directly defined reward file. WRONG PLACE TO EDIT THIS! DO NOT EDIT
-Commands:
-- lp group member permission settemp EnchantedSword.GroupDupe true 0mo1d0h0m
-- broadcast &fDupe votes needed reached for the day.&r
-Items:
-  DIAMOND:
-    Material: DIAMOND
-    Amount: 1
-DirectlyDefinedReward: true
