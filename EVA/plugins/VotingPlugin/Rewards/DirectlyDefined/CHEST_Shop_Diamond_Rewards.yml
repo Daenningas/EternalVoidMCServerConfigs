@@ -1,6 +1,0 @@
-# Directly defined reward file. WRONG PLACE TO EDIT THIS! DO NOT EDIT
-Items:
-  Diamond:
-    Material: DIAMOND
-    Amount: 1
-DirectlyDefinedReward: true

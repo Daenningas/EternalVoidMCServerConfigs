@@ -1,4 +1,0 @@
-# Directly defined reward file. ANY EDITS HERE CAN GET OVERRIDDEN!
-Messages:
-  Player: '&aYou voted on all sites in 1 day!'
-DirectlyDefinedReward: true
