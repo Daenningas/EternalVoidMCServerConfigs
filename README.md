@@ -15,7 +15,8 @@ Please use the below approach to keep changes visible and easy to understand.
    Or by getting Daenningas to use admin override permissions.
 5. Delete your committed branch.
 
-After that the following needs to happen for your change to be active:
+## How you change becomes active
+
 1. Every 15 minutes the EVA backend server does a git pull from this repro. It then copies *.yml files into /opt/minecraft/server
 2. The server needs to restart. This happens twice a day at 6AM and 6PM Eastern time.
 
