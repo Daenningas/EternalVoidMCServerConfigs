@@ -20,7 +20,7 @@ Please use the below approach to keep changes visible and easy to understand.
 1. Every 15 minutes the EVA backend server does a git pull from this repro. It then copies yml config files from the EVA directory into /opt/minecraft/server
 2. The server needs to restart. This happens twice a day at 6AM and 6PM Eastern time.
 
-## Resources server is tuned with
+## Resources server can be tuned with
 
 ### SpigotMC Optimisation Guide
 
