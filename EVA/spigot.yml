@@ -17,7 +17,7 @@ settings:
   sample-count: 12
   player-shuffle: 0
   user-cache-size: 1000
-  save-user-cache-on-stop-only: true
+  save-user-cache-on-stop-only: false
   moved-wrongly-threshold: 0.0625
   moved-too-quickly-multiplier: 10.0
   timeout-time: 60
@@ -62,7 +62,10 @@ stats:
   disable-saving: false
   forced-stats: {}
 world-settings:
+  worldeditregentempworld:
+    verbose: false
   default:
+    thunder-chance: 100000
     verbose: false
     hopper-amount: 1
     dragon-death-sound-radius: 0
@@ -87,14 +90,17 @@ world-settings:
     item-despawn-rate: 6000
     view-distance: default
     wither-spawn-sound-radius: 0
-    arrow-despawn-rate: 300
+    arrow-despawn-rate: 1200
     trident-despawn-rate: 1200
     hanging-tick-frequency: 100
     zombie-aggressive-towards-villager: true
     nerf-spawner-mobs: false
-    mob-spawn-range: 2
+    mob-spawn-range: 8
     end-portal-sound-radius: 0
     max-entity-collisions: 8
+    merge-radius:
+      exp: 3.0
+      item: 2.5
     growth:
       cactus-modifier: 100
       cane-modifier: 100
@@ -113,17 +119,17 @@ world-settings:
       sweetberry-modifier: 100
       kelp-modifier: 100
     entity-activation-range:
-      animals: 16
-      monsters: 24
+      animals: 32
+      monsters: 32
       raiders: 48
-      misc: 8
-      water: 8
-      villagers: 16
-      flying-monsters: 48
+      misc: 16
+      water: 16
+      villagers: 32
+      flying-monsters: 32
       villagers-work-immunity-after: 100
       villagers-work-immunity-for: 20
       villagers-active-for-panic: true
-      tick-inactive-villagers: false
+      tick-inactive-villagers: true
       wake-up-inactive:
         animals-max-per-tick: 4
         animals-every: 1200
@@ -139,7 +145,7 @@ world-settings:
         flying-monsters-for: 100
     ticks-per:
       hopper-transfer: 8
-      hopper-check: 8
+      hopper-check: 1
     hunger:
       jump-walk-exhaustion: 0.05
       jump-sprint-exhaustion: 0.2
@@ -149,18 +155,13 @@ world-settings:
       sprint-multiplier: 0.1
       other-multiplier: 0.0
     max-tick-time:
-      tile: 1000
-      entity: 1000
+      tile: 50
+      entity: 50
     squid-spawn-range:
       min: 45.0
-    merge-radius:
-      exp: 4.0
-      item: 3.5
     entity-tracking-range:
       players: 48
       animals: 48
       monsters: 48
       misc: 32
       other: 64
-  worldeditregentempworld:
-    verbose: false

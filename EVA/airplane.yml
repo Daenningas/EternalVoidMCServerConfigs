@@ -6,14 +6,14 @@ info:
 # Optimizes projectile settings
 projectile:
   max-loads-per-tick: 10
-  max-loads-per-projectile: 8
+  max-loads-per-projectile: 10
 # Optimizes entity brains when
 # they're far away from the player
 dab:
   enabled: false
   start-distance: 12
   max-tick-freq: 20
-  activation-dist-mod: 7
+  activation-dist-mod: 8
   blacklisted-entities: []
 # Configures Flare, the built-in profiler
 flare:

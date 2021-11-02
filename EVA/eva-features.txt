@@ -1,0 +1,14 @@
+Anarchy survival PVP/CPVP server.
+- Always on the latest version of Minecraft!
+- Cloud proxy, with i7 powered backend server for excellent performance.
+- No queue to join the server.
+- 20tps / 100% uptime very typical.
+- Minimal AntiCheat protections - Speed & Fly; Unfettered access to Elytra+
+- No admin intervention: Players are free to build, grief.
+- No moderators: No players on the server have any moderator commands / tools / abilities.
+- Anti-Portal trap plugin: After standing in a Nether Portal for 30 seconds the player will be teleported to a random spot around spawn. Useful for fast travel to spawn.
+- Nether Roof open, with a twist: Players receive damage on the nether roof unless under the beacon effect.
+- Player Heads: Players have a 5% chance of dropping their heads when killed.
+- Mob heads: Mobs have a chance of dropping their heads when killed. Wither Skeleton skulls drop in vanilla numbers.
+- Craftable Enchanted Golden Apples.
+- Discord Server: https://discord.gg/q6CJCD8

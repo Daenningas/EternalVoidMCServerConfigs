@@ -11,13 +11,13 @@
 verbose: false
 config-version: 22
 settings:
-  use-alternate-keepalive: true
-  dont-send-useless-entity-packets: true
-  lagging-threshold: 15.0
+  use-alternate-keepalive: false
+  dont-send-useless-entity-packets: false
+  lagging-threshold: 19.0
   allow-water-placement-in-the-end: true
+  disable-give-dropping: false
   tps-catchup: true
   server-mod-name: Purpur
-  disable-give-dropping: false
   broadcasts:
     advancement:
       only-broadcast-to-affected-player: false
@@ -84,12 +84,14 @@ settings:
     grindstone:
       ignore-curses: true
   enchantment:
-    allow-infinity-and-mending-together: true
-    allow-infinity-on-crossbow: true
+    allow-infinity-and-mending-together: false
+    allow-infinity-on-crossbow: false
     allow-unsafe-enchants: false
   entity:
     enderman:
       short-height: false
+  network:
+    upnp-port-forwarding: false
   messages:
     cannot-ride-mob: <red>You cannot mount that mob
     afk-broadcast-away: <yellow><italic>%s is now AFK
@@ -120,7 +122,7 @@ world-settings:
       - minecraft:mycelium
       - minecraft:podzol
       - minecraft:rooted_dirt
-      use-better-mending: true
+      use-better-mending: false
       always-tame-in-creative: false
       disable-drops-on-cramming-death: false
       entities-can-use-portals: true
@@ -140,8 +142,8 @@ world-settings:
       raid-cooldown-seconds: 0
       animal-breeding-cooldown-seconds: 0
       mobs-ignore-rails: false
-      rain-stops-after-sleep: false
-      thunder-stops-after-sleep: false
+      rain-stops-after-sleep: true
+      thunder-stops-after-sleep: true
       armorstand:
         step-height: 0.0
         set-name-visible-when-placing-with-custom-name: false
@@ -166,7 +168,7 @@ world-settings:
           firework: 0
           trident: 0
       infinity-bow:
-        works-without-arrows: true
+        works-without-arrows: false
         normal-arrows: true
         spectral-arrows: false
         tipped-arrows: false
@@ -190,6 +192,11 @@ world-settings:
           drop-contents-when-destroyed: true
         compass:
           holding-shows-bossbar: false
+        snowball:
+          extinguish:
+            fire: false
+            candles: false
+            campfires: false
       minecart:
         max-speed: 0.4
         place-anywhere: false
@@ -214,7 +221,7 @@ world-settings:
       mob-spawning:
         village-cats: default
         raid-patrols: default
-        phantoms: false
+        phantoms: default
         wandering-traders: default
         village-sieges: default
       player:
@@ -222,7 +229,7 @@ world-settings:
         invulnerable-while-accepting-resource-pack: false
         teleport-if-outside-border: false
         totem-of-undying-works-in-inventory: false
-        fix-stuck-in-portal: true
+        fix-stuck-in-portal: false
         one-punch-in-creative: false
         sleep-ignore-nearby-mobs: false
         can-skip-night: true
@@ -243,8 +250,8 @@ world-settings:
           update-tab-list: false
           mobs-target: true
         exp-dropped-on-death:
-          equation: expTotal /2
-          maximum: 10000
+          equation: expLevel * 7
+          maximum: 100
         armor-click-equip:
           allow-hot-swapping: false
           creative-makes-copy: true
@@ -292,25 +299,20 @@ world-settings:
         force: false
         head-chance: 0.25
     mobs:
-      enderman:
+      chicken:
         ridable: false
         ridable-in-water: false
-        allow-griefing: true
-        can-despawn-with-held-block: false
-        bypass-mob-griefing: false
-        takes-damage-from-water: true
-        aggressive-towards-endermites: true
-        aggressive-towards-endermites-only-spawned-by-player-thrown-ender-pearls: false
-        ignore-players-wearing-dragon-head: false
-        disable-player-stare-aggression: false
-        ignore-projectiles: false
+        retaliate: false
+        breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
-          max_health: 40.0
+          max_health: 4.0
       wandering_trader:
         ridable: false
         ridable-in-water: false
         follow-emerald-blocks: false
         can-be-leashed: false
+        takes-damage-from-water: false
         allow-trading: true
         attributes:
           max_health: 20.0
@@ -318,6 +320,7 @@ world-settings:
         ridable: false
         ridable-in-water: false
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         attributes:
           max_health: 24.0
       phantom:
@@ -332,6 +335,7 @@ world-settings:
         burn-in-light: 0
         burn-in-daylight: true
         ignore-players-with-torch: false
+        takes-damage-from-water: false
         flames:
           damage: 1.0
           fire-time: 8
@@ -342,7 +346,7 @@ world-settings:
           only-above-sea-level: true
           only-with-visible-sky: true
           local-difficulty-chance: 3.0
-          min-time-since-slept: 720000
+          min-time-since-slept: 72000
           delay:
             min: 1200
             max: 2400
@@ -360,6 +364,7 @@ world-settings:
         health-regen-amount: 1.0
         health-regen-delay: 20
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         can-ride-vehicles: false
         explosion-radius: 1.0
         play-spawn-sound: true
@@ -368,12 +373,14 @@ world-settings:
       axolotl:
         ridable: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 14.0
       bat:
         ridable: false
         ridable-in-water: false
         ridable-max-y: 256.0
+        takes-damage-from-water: false
         attributes:
           max_health: 6.0
       bee:
@@ -381,6 +388,7 @@ world-settings:
         ridable-in-water: false
         ridable-max-y: 256.0
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         can-work-at-night: false
         can-work-in-rain: false
         attributes:
@@ -393,11 +401,12 @@ world-settings:
         attributes:
           max_health: 20.0
       cat:
-        default-collar-color: RED
         ridable: false
         ridable-in-water: false
+        default-collar-color: RED
         spawn-delay: 1200
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
         scan-range-for-other-cats:
@@ -406,17 +415,12 @@ world-settings:
       cave_spider:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 12.0
-      chicken:
-        ridable: false
-        ridable-in-water: false
-        retaliate: false
-        breeding-delay-ticks: 6000
-        attributes:
-          max_health: 4.0
       cod:
         ridable: false
+        takes-damage-from-water: false
         attributes:
           max_health: 3.0
       cow:
@@ -424,6 +428,7 @@ world-settings:
         ridable-in-water: false
         feed-mushrooms-for-mooshroom: 0
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
         naturally-aggressive-to-players:
@@ -435,13 +440,15 @@ world-settings:
         naturally-charged-chance: 0.0
         allow-griefing: true
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         explode-when-killed: false
         health-impacts-explosion: false
         attributes:
           max_health: 20.0
       dolphin:
         ridable: false
-        disable-treasure-searching: true
+        disable-treasure-searching: false
+        takes-damage-from-water: false
         naturally-aggressive-to-players-chance: 0.0
         spit:
           cooldown: 20
@@ -452,6 +459,7 @@ world-settings:
       donkey:
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health:
             min: 15.0
@@ -465,6 +473,7 @@ world-settings:
       drowned:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         can-break-doors: false
         attributes:
           max_health: 20.0
@@ -475,6 +484,7 @@ world-settings:
           try-existing-chickens: true
       elder_guardian:
         ridable: false
+        takes-damage-from-water: false
         attributes:
           max_health: 80.0
       ender_dragon:
@@ -483,18 +493,35 @@ world-settings:
         ridable-max-y: 256.0
         always-drop-full-exp: false
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         can-ride-vehicles: false
         attributes:
           max_health: 200.0
+      enderman:
+        ridable: false
+        ridable-in-water: false
+        allow-griefing: true
+        can-despawn-with-held-block: false
+        bypass-mob-griefing: false
+        takes-damage-from-water: true
+        aggressive-towards-endermites: true
+        aggressive-towards-endermites-only-spawned-by-player-thrown-ender-pearls: false
+        ignore-players-wearing-dragon-head: false
+        disable-player-stare-aggression: false
+        ignore-projectiles: false
+        attributes:
+          max_health: 40.0
       endermite:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 8.0
       evoker:
         ridable: false
         ridable-in-water: false
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         attributes:
           max_health: 24.0
       fox:
@@ -503,12 +530,14 @@ world-settings:
         tulips-change-type: false
         breeding-delay-ticks: 6000
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
       ghast:
         ridable: false
         ridable-in-water: false
         ridable-max-y: 256.0
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
       giant:
@@ -520,32 +549,38 @@ world-settings:
         jump-height: 1.0
         have-ai: false
         have-hostile-ai: false
+        takes-damage-from-water: false
         attributes:
           max_health: 100.0
       glow_squid:
         ridable: false
         can-fly: false
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
       goat:
         ridable: false
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
       guardian:
         ridable: false
+        takes-damage-from-water: false
         attributes:
           max_health: 30.0
       hoglin:
         ridable: false
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 40.0
       horse:
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         stand-with-rider: true
         tempted-by-gold: false
         attributes:
@@ -561,6 +596,7 @@ world-settings:
       husk:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 20.0
           spawn_reinforcements: 0.1
@@ -573,12 +609,14 @@ world-settings:
         ridable-in-water: false
         movement-speed: 0.5
         follow-range: 18.0
+        takes-damage-from-water: false
         attributes:
           max_health: 32.0
       iron_golem:
         ridable: false
         ridable-in-water: false
         can-swim: false
+        takes-damage-from-water: false
         poppy-calms-anger: false
         attributes:
           max_health: 100.0
@@ -586,6 +624,7 @@ world-settings:
         ridable: false
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         join-caravans: true
         tempted-by-hay: false
         attributes:
@@ -601,17 +640,20 @@ world-settings:
       magma_cube:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: size * size
       mooshroom:
         ridable: false
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
       mule:
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health:
             min: 15.0
@@ -626,18 +668,21 @@ world-settings:
         ridable: false
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
       panda:
         ridable: false
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 20.0
       parrot:
         ridable: false
         ridable-in-water: false
         ridable-max-y: 256.0
+        takes-damage-from-water: false
         can-breed: false
         attributes:
           max_health: 6.0
@@ -646,18 +691,21 @@ world-settings:
         ridable-in-water: false
         give-saddle-back: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
       piglin:
         ridable: false
         ridable-in-water: false
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         portal-spawn-modifier: 2000
         attributes:
           max_health: 16.0
       piglin_brute:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 50.0
       polar_bear:
@@ -665,10 +713,12 @@ world-settings:
         ridable-in-water: false
         breedable-item: ''
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 30.0
       pufferfish:
         ridable: false
+        takes-damage-from-water: false
         attributes:
           max_health: 3.0
       rabbit:
@@ -678,12 +728,14 @@ world-settings:
         spawn-killer-rabbit-chance: 0.0
         breeding-delay-ticks: 6000
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         attributes:
           max_health: 3.0
       ravager:
         ridable: false
         ridable-in-water: false
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         griefable-blocks:
         - minecraft:oak_leaves
         - minecraft:spruce_leaves
@@ -699,6 +751,7 @@ world-settings:
           max_health: 100.0
       salmon:
         ridable: false
+        takes-damage-from-water: false
         attributes:
           max_health: 3.0
       sheep:
@@ -706,12 +759,14 @@ world-settings:
         ridable-in-water: false
         breeding-delay-ticks: 6000
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         attributes:
           max_health: 8.0
       shulker:
         ridable: false
         ridable-in-water: false
-        change-color-with-dye: true
+        takes-damage-from-water: false
+        change-color-with-dye: false
         attributes:
           max_health: 30.0
         spawn-from-bullet:
@@ -724,16 +779,19 @@ world-settings:
         ridable: false
         ridable-in-water: false
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         attributes:
           max_health: 8.0
       skeleton:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 20.0
       skeleton_horse:
         ridable-in-water: false
         can-swim: false
+        takes-damage-from-water: false
         attributes:
           max_health:
             min: 15.0
@@ -747,6 +805,7 @@ world-settings:
       slime:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: size * size
       snow_golem:
@@ -768,16 +827,19 @@ world-settings:
         immune-to-EAR: true
         water-offset-check: 0.0
         can-fly: false
+        takes-damage-from-water: false
         attributes:
           max_health: 10.0
       spider:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 16.0
       stray:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 20.0
       strider:
@@ -792,6 +854,7 @@ world-settings:
         ridable: false
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health:
             min: 15.0
@@ -804,18 +867,21 @@ world-settings:
             max: 0.175
       tropical_fish:
         ridable: false
+        takes-damage-from-water: false
         attributes:
           max_health: 3.0
       turtle:
         ridable: false
         ridable-in-water: false
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 30.0
       vex:
         ridable: false
         ridable-in-water: false
         ridable-max-y: 256.0
+        takes-damage-from-water: false
         attributes:
           max_health: 14.0
       villager:
@@ -830,6 +896,7 @@ world-settings:
         clerics-farm-warts: false
         cleric-wart-farmers-throw-warts-at-villagers: true
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         allow-trading: true
         attributes:
           max_health: 20.0
@@ -842,6 +909,7 @@ world-settings:
       vindicator:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 24.0
         johnny:
@@ -849,11 +917,13 @@ world-settings:
       witch:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 26.0
       wither_skeleton:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 20.0
       wolf:
@@ -863,19 +933,21 @@ world-settings:
         milk-cures-rabid-wolves: true
         spawn-rabid-chance: 0.0
         breeding-delay-ticks: 6000
+        takes-damage-from-water: false
         attributes:
           max_health: 8.0
       zoglin:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 40.0
       zombie:
         ridable: false
         ridable-in-water: false
-        aggressive-towards-villager-when-lagging: false
-        break-door-minimum-difficulty: HARD
+        aggressive-towards-villager-when-lagging: true
         bypass-mob-griefing: false
+        takes-damage-from-water: false
         attributes:
           max_health: 20.0
           spawn_reinforcements: 0.1
@@ -887,6 +959,7 @@ world-settings:
         ridable-in-water: false
         can-swim: false
         spawn-chance: 0.0
+        takes-damage-from-water: false
         attributes:
           max_health:
             min: 15.0
@@ -900,6 +973,7 @@ world-settings:
       zombie_villager:
         ridable: false
         ridable-in-water: false
+        takes-damage-from-water: false
         attributes:
           max_health: 20.0
           spawn_reinforcements: 0.1
@@ -910,10 +984,13 @@ world-settings:
         curing_time:
           min: 3600
           max: 6000
+        cure:
+          enabled: true
       zombified_piglin:
         ridable: false
         ridable-in-water: false
         count-as-player-kill-when-angry: true
+        takes-damage-from-water: false
         attributes:
           max_health: 20.0
           spawn_reinforcements: 0.0
@@ -975,14 +1052,14 @@ world-settings:
         gets-moist-from-below: false
         use-alpha-farmland: false
         disable-trampling: false
-        only-players-trample: true
-        feather-fall-distance-affects-trampling: true
+        only-players-trample: false
+        feather-fall-distance-affects-trampling: false
       flowering_azalea:
         growth-chance: 0.0
       furnace:
         use-lava-from-underneath: false
       end_portal:
-        safe-teleporting: false
+        safe-teleporting: true
       blue_ice:
         allow-snow-formation: true
         allow-mob-spawns: true
@@ -994,6 +1071,9 @@ world-settings:
         speed:
           nether: 10
           not-nether: 30
+      water:
+        infinite-source: true
+        infinite-required-sources: 2
       kelp:
         max-growth-age: 25
       magma-block:
@@ -1009,14 +1089,14 @@ world-settings:
         explosion-fire: true
         explosion-effect: DESTROY
       sand:
-        fix-duping: false
+        fix-duping: true
       shulker_box:
         allow-oversized-stacks: false
       sign:
         allow-colors: false
         right-click-edit: false
       slab:
-        break-individual-slabs-when-sneaking: true
+        break-individual-slabs-when-sneaking: false
       powered-rail:
         activation-range: 8
       spawner:
@@ -1039,6 +1119,8 @@ world-settings:
       weeping_vines:
         growth-modifier: 0.1
         max-growth-age: 25
+      campfire:
+        lit-when-placed: true
       conduit:
         effect-distance: 16
         valid-ring-blocks:
@@ -1055,172 +1137,169 @@ world-settings:
           powder-snow: 0.10000000149011612
       big_dripleaf:
         tilt-delay:
-          FULL: 100
-          PARTIAL: 10
           UNSTABLE: 10
-      water:
-        infinite-source: true
-        infinite-required-sources: 2
+          PARTIAL: 10
+          FULL: 100
     tools:
       axe:
         strippables:
-          minecraft:warped_hyphae:
-            drops: {}
-            into: minecraft:stripped_warped_hyphae
-          minecraft:crimson_stem:
-            drops: {}
-            into: minecraft:stripped_crimson_stem
-          minecraft:warped_stem:
-            drops: {}
-            into: minecraft:stripped_warped_stem
-          minecraft:spruce_log:
-            drops: {}
-            into: minecraft:stripped_spruce_log
-          minecraft:oak_log:
-            drops: {}
-            into: minecraft:stripped_oak_log
-          minecraft:jungle_log:
-            drops: {}
-            into: minecraft:stripped_jungle_log
-          minecraft:dark_oak_wood:
-            drops: {}
-            into: minecraft:stripped_dark_oak_wood
-          minecraft:acacia_log:
-            drops: {}
-            into: minecraft:stripped_acacia_log
-          minecraft:birch_wood:
-            drops: {}
-            into: minecraft:stripped_birch_wood
-          minecraft:birch_log:
-            drops: {}
-            into: minecraft:stripped_birch_log
-          minecraft:jungle_wood:
-            drops: {}
-            into: minecraft:stripped_jungle_wood
-          minecraft:acacia_wood:
-            drops: {}
-            into: minecraft:stripped_acacia_wood
-          minecraft:dark_oak_log:
-            drops: {}
-            into: minecraft:stripped_dark_oak_log
           minecraft:oak_wood:
-            drops: {}
             into: minecraft:stripped_oak_wood
-          minecraft:spruce_wood:
             drops: {}
-            into: minecraft:stripped_spruce_wood
+          minecraft:dark_oak_log:
+            into: minecraft:stripped_dark_oak_log
+            drops: {}
+          minecraft:acacia_wood:
+            into: minecraft:stripped_acacia_wood
+            drops: {}
+          minecraft:jungle_wood:
+            into: minecraft:stripped_jungle_wood
+            drops: {}
+          minecraft:birch_log:
+            into: minecraft:stripped_birch_log
+            drops: {}
+          minecraft:birch_wood:
+            into: minecraft:stripped_birch_wood
+            drops: {}
+          minecraft:acacia_log:
+            into: minecraft:stripped_acacia_log
+            drops: {}
+          minecraft:dark_oak_wood:
+            into: minecraft:stripped_dark_oak_wood
+            drops: {}
+          minecraft:jungle_log:
+            into: minecraft:stripped_jungle_log
+            drops: {}
+          minecraft:oak_log:
+            into: minecraft:stripped_oak_log
+            drops: {}
+          minecraft:spruce_log:
+            into: minecraft:stripped_spruce_log
+            drops: {}
+          minecraft:warped_stem:
+            into: minecraft:stripped_warped_stem
+            drops: {}
+          minecraft:crimson_stem:
+            into: minecraft:stripped_crimson_stem
+            drops: {}
+          minecraft:warped_hyphae:
+            into: minecraft:stripped_warped_hyphae
+            drops: {}
           minecraft:crimson_hyphae:
-            drops: {}
             into: minecraft:stripped_crimson_hyphae
+            drops: {}
+          minecraft:spruce_wood:
+            into: minecraft:stripped_spruce_wood
+            drops: {}
         waxables:
-          minecraft:waxed_oxidized_cut_copper_slab:
-            drops: {}
-            into: minecraft:oxidized_cut_copper_slab
-          minecraft:waxed_weathered_cut_copper_slab:
-            drops: {}
-            into: minecraft:weathered_cut_copper_slab
-          minecraft:waxed_exposed_copper:
-            drops: {}
-            into: minecraft:exposed_copper
-          minecraft:waxed_cut_copper_stairs:
-            drops: {}
-            into: minecraft:cut_copper_stairs
-          minecraft:waxed_cut_copper:
-            drops: {}
-            into: minecraft:cut_copper
-          minecraft:waxed_exposed_cut_copper:
-            drops: {}
-            into: minecraft:exposed_cut_copper
-          minecraft:waxed_oxidized_cut_copper_stairs:
-            drops: {}
-            into: minecraft:oxidized_cut_copper_stairs
-          minecraft:waxed_weathered_cut_copper_stairs:
-            drops: {}
-            into: minecraft:weathered_cut_copper_stairs
-          minecraft:waxed_exposed_cut_copper_slab:
-            drops: {}
-            into: minecraft:exposed_cut_copper_slab
-          minecraft:waxed_cut_copper_slab:
-            drops: {}
-            into: minecraft:cut_copper_slab
-          minecraft:waxed_copper_block:
-            drops: {}
-            into: minecraft:copper_block
-          minecraft:waxed_oxidized_copper:
-            drops: {}
-            into: minecraft:oxidized_copper
-          minecraft:waxed_weathered_copper:
-            drops: {}
-            into: minecraft:weathered_copper
-          minecraft:waxed_oxidized_cut_copper:
-            drops: {}
-            into: minecraft:oxidized_cut_copper
           minecraft:waxed_weathered_cut_copper:
-            drops: {}
             into: minecraft:weathered_cut_copper
-          minecraft:waxed_exposed_cut_copper_stairs:
             drops: {}
-            into: minecraft:exposed_cut_copper_stairs
-        weatherables:
-          minecraft:exposed_cut_copper_slab:
+          minecraft:waxed_oxidized_cut_copper:
+            into: minecraft:oxidized_cut_copper
             drops: {}
-            into: minecraft:cut_copper_slab
-          minecraft:weathered_cut_copper:
-            drops: {}
-            into: minecraft:exposed_cut_copper
-          minecraft:oxidized_cut_copper_slab:
-            drops: {}
-            into: minecraft:weathered_cut_copper_slab
-          minecraft:weathered_cut_copper_slab:
-            drops: {}
-            into: minecraft:exposed_cut_copper_slab
-          minecraft:weathered_cut_copper_stairs:
-            drops: {}
-            into: minecraft:exposed_cut_copper_stairs
-          minecraft:exposed_copper:
-            drops: {}
-            into: minecraft:copper_block
-          minecraft:oxidized_cut_copper:
-            drops: {}
-            into: minecraft:weathered_cut_copper
-          minecraft:exposed_cut_copper:
-            drops: {}
-            into: minecraft:cut_copper
-          minecraft:weathered_copper:
-            drops: {}
-            into: minecraft:exposed_copper
-          minecraft:exposed_cut_copper_stairs:
-            drops: {}
-            into: minecraft:cut_copper_stairs
-          minecraft:oxidized_copper:
-            drops: {}
+          minecraft:waxed_weathered_copper:
             into: minecraft:weathered_copper
-          minecraft:oxidized_cut_copper_stairs:
             drops: {}
+          minecraft:waxed_oxidized_copper:
+            into: minecraft:oxidized_copper
+            drops: {}
+          minecraft:waxed_copper_block:
+            into: minecraft:copper_block
+            drops: {}
+          minecraft:waxed_cut_copper_slab:
+            into: minecraft:cut_copper_slab
+            drops: {}
+          minecraft:waxed_exposed_cut_copper_slab:
+            into: minecraft:exposed_cut_copper_slab
+            drops: {}
+          minecraft:waxed_weathered_cut_copper_stairs:
             into: minecraft:weathered_cut_copper_stairs
+            drops: {}
+          minecraft:waxed_oxidized_cut_copper_stairs:
+            into: minecraft:oxidized_cut_copper_stairs
+            drops: {}
+          minecraft:waxed_exposed_cut_copper:
+            into: minecraft:exposed_cut_copper
+            drops: {}
+          minecraft:waxed_cut_copper:
+            into: minecraft:cut_copper
+            drops: {}
+          minecraft:waxed_cut_copper_stairs:
+            into: minecraft:cut_copper_stairs
+            drops: {}
+          minecraft:waxed_exposed_copper:
+            into: minecraft:exposed_copper
+            drops: {}
+          minecraft:waxed_weathered_cut_copper_slab:
+            into: minecraft:weathered_cut_copper_slab
+            drops: {}
+          minecraft:waxed_oxidized_cut_copper_slab:
+            into: minecraft:oxidized_cut_copper_slab
+            drops: {}
+          minecraft:waxed_exposed_cut_copper_stairs:
+            into: minecraft:exposed_cut_copper_stairs
+            drops: {}
+        weatherables:
+          minecraft:exposed_cut_copper_stairs:
+            into: minecraft:cut_copper_stairs
+            drops: {}
+          minecraft:weathered_copper:
+            into: minecraft:exposed_copper
+            drops: {}
+          minecraft:exposed_cut_copper:
+            into: minecraft:cut_copper
+            drops: {}
+          minecraft:oxidized_cut_copper:
+            into: minecraft:weathered_cut_copper
+            drops: {}
+          minecraft:exposed_copper:
+            into: minecraft:copper_block
+            drops: {}
+          minecraft:weathered_cut_copper_stairs:
+            into: minecraft:exposed_cut_copper_stairs
+            drops: {}
+          minecraft:weathered_cut_copper_slab:
+            into: minecraft:exposed_cut_copper_slab
+            drops: {}
+          minecraft:oxidized_cut_copper_slab:
+            into: minecraft:weathered_cut_copper_slab
+            drops: {}
+          minecraft:weathered_cut_copper:
+            into: minecraft:exposed_cut_copper
+            drops: {}
+          minecraft:exposed_cut_copper_slab:
+            into: minecraft:cut_copper_slab
+            drops: {}
+          minecraft:oxidized_cut_copper_stairs:
+            into: minecraft:weathered_cut_copper_stairs
+            drops: {}
+          minecraft:oxidized_copper:
+            into: minecraft:weathered_copper
+            drops: {}
       hoe:
         tillables:
-          minecraft:rooted_dirt:
-            condition: always
-            drops:
-              minecraft:hanging_roots: 1.0
-            into: minecraft:dirt
-          minecraft:dirt_path:
-            condition: air_above
+          minecraft:dirt:
             drops: {}
+            condition: air_above
+            into: minecraft:farmland
+          minecraft:grass_block:
+            drops: {}
+            condition: air_above
             into: minecraft:farmland
           minecraft:coarse_dirt:
-            condition: air_above
             drops: {}
+            condition: air_above
             into: minecraft:dirt
-          minecraft:grass_block:
-            condition: air_above
+          minecraft:dirt_path:
             drops: {}
-            into: minecraft:farmland
-          minecraft:dirt:
             condition: air_above
-            drops: {}
             into: minecraft:farmland
+          minecraft:rooted_dirt:
+            drops:
+              minecraft:hanging_roots: 1.0
+            condition: always
+            into: minecraft:dirt
     ridable-settings:
       babies-are-ridable: true
       untamed-tamables-are-ridable: true
