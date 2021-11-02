@@ -3,6 +3,10 @@
 
 An anarchy server with some high quality anarchy
 
+## Change Best Practices
+
+Patience: Only change one thing at a time to observe results. I (Daen) haven't followed this rule strictly in the past and it has resulted in issues.
+
 ## How to propose changes
 
 Please use the below approach to keep changes visible and easy to understand.
