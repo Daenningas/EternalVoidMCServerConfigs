@@ -84,7 +84,7 @@ settings:
     grindstone:
       ignore-curses: true
   enchantment:
-    allow-infinity-and-mending-together: false
+    allow-infinity-and-mending-together: true
     allow-infinity-on-crossbow: false
     allow-unsafe-enchants: false
   entity:
