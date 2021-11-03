@@ -1,7 +1,7 @@
 ===========
 # EternalVoid
 
-An anarchy server with some high quality anarchy
+An anarchy server with some high quality anarchy.
 
 ## Change Best Practices
 
