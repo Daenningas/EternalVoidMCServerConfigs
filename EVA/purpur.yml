@@ -346,7 +346,7 @@ world-settings:
           only-above-sea-level: true
           only-with-visible-sky: true
           local-difficulty-chance: 3.0
-          min-time-since-slept: 72000
+          min-time-since-slept: 720000
           delay:
             min: 1200
             max: 2400
