@@ -180,7 +180,7 @@ world-settings:
     spawner-nerfed-mobs-should-jump: false
     entities-target-with-follow-range: false
     zombies-target-turtle-eggs: true
-    zombie-villager-infection-chance: -1.0
+    zombie-villager-infection-chance: 100.0
     mob-spawner-tick-rate: 1
     all-chunks-are-slime-chunks: false
     per-player-mob-spawns: true
@@ -200,7 +200,7 @@ world-settings:
       small_fireball: -1
     game-mechanics:
       scan-for-legacy-ender-dragon: true
-      fix-curing-zombie-villager-discount-exploit: true
+      fix-curing-zombie-villager-discount-exploit: false
       disable-pillager-patrols: false
       nerf-pigmen-from-nether-portals: false
       disable-chest-cat-detection: false
